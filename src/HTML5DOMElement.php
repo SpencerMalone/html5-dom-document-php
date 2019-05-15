@@ -128,7 +128,7 @@ class HTML5DOMElement extends \DOMElement
      * @param string $value
      * @return string The updated value
      */
-    private function updateResult(string $value): string
+    private function updateResult(string $value)
     {
 
         $value = str_replace(self::$foundEntitiesCache[0], self::$foundEntitiesCache[1], $value);
@@ -159,7 +159,7 @@ class HTML5DOMElement extends \DOMElement
      * @return string The attribute value.
      * @throws \InvalidArgumentException
      */
-    public function getAttribute($name): string
+    public function getAttribute($name)
     {
         if ($this->attributes->length === 0) { // Performance optimization
             return '';
@@ -173,7 +173,7 @@ class HTML5DOMElement extends \DOMElement
      *
      * @return array An associative array containing all attributes.
      */
-    public function getAttributes(): array
+    public function getAttributes()
     {
         $attributes = [];
         foreach ($this->attributes as $attributeName => $attribute) {
@@ -188,7 +188,7 @@ class HTML5DOMElement extends \DOMElement
      *
      * @return string The element outerHTML.
      */
-    public function __toString(): string
+    public function __toString()
     {
         return $this->outerHTML;
     }

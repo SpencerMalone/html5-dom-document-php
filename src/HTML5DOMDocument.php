@@ -204,7 +204,7 @@ class HTML5DOMDocument extends \DOMDocument
      *
      * @return boolean TRUE on success, FALSE otherwise.
      */
-    private function addHtmlElementIfMissing(): bool
+    private function addHtmlElementIfMissing()
     {
         if ($this->getElementsByTagName('html')->length === 0) {
             if (!isset(self::$newObjectsCache['htmlelement'])) {
@@ -221,7 +221,7 @@ class HTML5DOMDocument extends \DOMDocument
      *
      * @return boolean TRUE on success, FALSE otherwise.
      */
-    private function addHeadElementIfMissing(): bool
+    private function addHeadElementIfMissing()
     {
         if ($this->getElementsByTagName('head')->length === 0) {
             $htmlElement = $this->getElementsByTagName('html')->item(0);
@@ -244,7 +244,7 @@ class HTML5DOMDocument extends \DOMDocument
      *
      * @return boolean TRUE on success, FALSE otherwise.
      */
-    private function addBodyElementIfMissing(): bool
+    private function addBodyElementIfMissing()
     {
         if ($this->getElementsByTagName('body')->length === 0) {
             if (!isset(self::$newObjectsCache['bodyelement'])) {
@@ -262,7 +262,7 @@ class HTML5DOMDocument extends \DOMDocument
      * @param \DOMNode $node Optional parameter to output a subset of the document.
      * @return string The document (or node) HTML code as string.
      */
-    public function saveHTML(\DOMNode $node = null): string
+    public function saveHTML(\DOMNode $node = null)
     {
         if (!$this->loaded) {
             return '<!DOCTYPE html>';
